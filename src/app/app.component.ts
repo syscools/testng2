@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'My Chess Blog';
+  count : Number = 0;
+  constructor() {
+    /*
+    setInterval(function(this){ 
+      this.count++;
+      console.log("count = " + this.count);
+      }, 3000);
+    */
+  }
 }
