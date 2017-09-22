@@ -4,8 +4,8 @@ var app = express();
 
 app.use('/', express.static(__dirname + '/dist'));
 
-app.get('/version', function (req,res) {
-    res.send({"version": process.env.CODESIG});
+app.get('/appts', function (req,res) {
+    res.send({"version": process.env.appts});
 });
 
 app.get('/env', function (req,res) {

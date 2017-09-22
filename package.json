@@ -4,8 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node_modules/.bin/concurrently \"node app.js --host 0.0.0.0\" \"npm run build\"",
+    "start": "node_modules/.bin/concurrently \"node app.js --host 0.0.0.0\" \"npm run build\" \"npm run gents\"",
     "build": "node_modules/.bin/ng build",
+    "gents": "echo appts=$(date +'%Y%m%dT%H%M%S') >> .env",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
