@@ -5,7 +5,7 @@ var app = express();
 
 app.use('/', express.static(__dirname + '/dist'));
 
-app.get('/appts', function (req,res) {
+app.get('/status', function (req,res) {
     /*
     try {
         res.send({"version": process.env.appts});
