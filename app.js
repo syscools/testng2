@@ -1,15 +1,22 @@
 require("dotenv").load();
+var fs = require("fs");
 var express = require("express");
 var app = express();
 
 app.use('/', express.static(__dirname + '/dist'));
 
 app.get('/appts', function (req,res) {
+    /*
     try {
         res.send({"version": process.env.appts});
     } catch (err) {
         res.send({"status": "still building dist/"});
     }
+    */
+
+    fs.readFileSync(".env","utf8",(err,contents) => {
+        res.send(contents);
+    });
 });
 
 app.get('/env', function (req,res) {
