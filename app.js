@@ -14,7 +14,7 @@ app.get('/appts', function (req,res) {
     }
     */
 
-    fs.readFileSync(".env","utf8",(err,contents) => {
+    fs.readFile(".env","utf8",(err,contents) => {
         res.send(contents);
     });
 });
