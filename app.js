@@ -5,7 +5,11 @@ var app = express();
 app.use('/', express.static(__dirname + '/dist'));
 
 app.get('/appts', function (req,res) {
-    res.send({"version": process.env.appts});
+    try {
+        res.send({"version": process.env.appts});
+    } catch (err) {
+        res.send({"status": "still building dist/"});
+    }
 });
 
 app.get('/env', function (req,res) {
