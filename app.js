@@ -3,6 +3,10 @@ var app = express();
 
 app.use('/', express.static(__dirname + '/dist'));
 
+app.get('/version', function (req,res) {
+    res.send({"version": process.env.CODESIG});
+});
+
 app.get('/env', function (req,res) {
     var html = "<h1>Welcome</h1><hr><ul>";
     for (x in process.env) {
