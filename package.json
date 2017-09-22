@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node_modules/.bin/ng serve --host 0.0.0.0 --disable-host-check",
+    "start": "node_modules/.bin/concurrently \"node_modules/.bin/ng serve --host 0.0.0.0 --disable-host-check\" \"npm run build\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -42,7 +42,8 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "typescript": "~2.3.3",
+    "concurrently": "^3.2.0"
   },
   "engines": {
     "node": "6.9.4"
